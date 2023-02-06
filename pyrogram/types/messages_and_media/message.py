@@ -297,7 +297,7 @@ class Message(Object, Update):
         self,
         *,
         client: "pyrogram.Client" = None,
-        message.id: int,
+        message_id: int,
         from_user: "types.User" = None,
         sender_chat: "types.Chat" = None,
         date: int = None,
@@ -1615,7 +1615,7 @@ class Message(Object, Update):
                 If the message is a reply, ID of the original message.
 
             reply_markup (:obj:`~pyrogram.types.InlineKeyboardMarkup`, *optional*):
-                An object for an inline keyboard. If empty, one ‘Play game_title�? button will be shown automatically.
+                An object for an inline keyboard. If empty, one âPlay game_titleâ? button will be shown automatically.
                 If not empty, the first button must launch the game.
 
         Returns:
@@ -1809,7 +1809,7 @@ class Message(Object, Update):
             media (``list``):
                 A list containing either :obj:`~pyrogram.types.InputMediaPhoto` or
                 :obj:`~pyrogram.types.InputMediaVideo` objects
-                describing photos and videos to be sent, must include 2�?10 items.
+                describing photos and videos to be sent, must include 2â?10 items.
 
             quote (``bool``, *optional*):
                 If ``True``, the message will be sent as a reply to this message.
