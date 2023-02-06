@@ -86,7 +86,7 @@ class Message(Object, Update):
         forward_from_chat (:obj:`~pyrogram.types.Chat`, *optional*):
             For messages forwarded from channels, information about the original channel. For messages forwarded from anonymous group administrators, information about the original supergroup.
 
-        forward_from_message.id (``int``, *optional*):
+        forward_from_message_id (``int``, *optional*):
             For messages forwarded from channels, identifier of the original message in the channel.
 
         forward_signature (``str``, *optional*):
@@ -305,7 +305,7 @@ class Message(Object, Update):
         forward_from: "types.User" = None,
         forward_sender_name: str = None,
         forward_from_chat: "types.Chat" = None,
-        forward_from_message.id: int = None,
+        forward_from_message_id: int = None,
         forward_signature: str = None,
         forward_date: int = None,
         reply_to_message: "Message" = None,
@@ -377,7 +377,7 @@ class Message(Object, Update):
         self.forward_from = forward_from
         self.forward_sender_name = forward_sender_name
         self.forward_from_chat = forward_from_chat
-        self.forward_from_message.id = forward_from_message.id
+        self.forward_from_message_id = forward_from_message_id
         self.forward_signature = forward_signature
         self.forward_date = forward_date
         self.reply_to_message = reply_to_message
@@ -592,7 +592,7 @@ class Message(Object, Update):
             forward_from = None
             forward_sender_name = None
             forward_from_chat = None
-            forward_from_message.id = None
+            forward_from_message_id = None
             forward_signature = None
             forward_date = None
 
@@ -609,7 +609,7 @@ class Message(Object, Update):
                         forward_from = types.User._parse(client, users[raw_peer_id])
                     else:
                         forward_from_chat = types.Chat._parse_channel_chat(client, chats[raw_peer_id])
-                        forward_from_message.id = forward_header.channel_post
+                        forward_from_message_id = forward_header.channel_post
                         forward_signature = forward_header.post_author
                 elif forward_header.from_name:
                     forward_sender_name = forward_header.from_name
@@ -760,7 +760,7 @@ class Message(Object, Update):
                 forward_from=forward_from,
                 forward_sender_name=forward_sender_name,
                 forward_from_chat=forward_from_chat,
-                forward_from_message.id=forward_from_message.id,
+                forward_from_message_id=forward_from_message_id,
                 forward_signature=forward_signature,
                 forward_date=forward_date,
                 mentioned=message.mentioned,
