@@ -444,7 +444,7 @@ class Message(Object, Update):
         replies: int = 1
     ):
         if isinstance(message, raw.types.MessageEmpty):
-            return Message(message.id=message.id, empty=True, client=client)
+            return Message(message_id=message.id, empty=True, client=client)
 
         from_id = utils.get_raw_peer_id(message.from_id)
         peer_id = utils.get_raw_peer_id(message.peer_id)
@@ -533,7 +533,7 @@ class Message(Object, Update):
             sender_chat = types.Chat._parse(client, message, users, chats, is_chat=False) if not from_user else None
 
             parsed_message = Message(
-                message.id=message.id,
+                message_id=message.id,
                 date=message.date,
                 chat=types.Chat._parse(client, message, users, chats, is_chat=True),
                 from_user=from_user,
@@ -730,7 +730,7 @@ class Message(Object, Update):
                          for r in message.reactions.results] if message.reactions else None
 
             parsed_message = Message(
-                message.id=message.id,
+                message_id=message.id,
                 date=message.date,
                 chat=types.Chat._parse(client, message, users, chats, is_chat=True),
                 from_user=from_user,
@@ -3273,7 +3273,7 @@ class Message(Object, Update):
 
             client.retract_vote(
                 chat_id=message.chat.id,
-                message.id=message.id,
+                message_id=message.id,
             )
 
         Example:
@@ -3408,7 +3408,7 @@ class Message(Object, Update):
 
             client.pin_chat_message(
                 chat_id=message.chat.id,
-                message.id=message.id
+                message_id=message.id
             )
 
         Example:
@@ -3447,7 +3447,7 @@ class Message(Object, Update):
 
             client.unpin_chat_message(
                 chat_id=message.chat.id,
-                message.id=message.id
+                message_id=message.id
             )
 
         Example:
