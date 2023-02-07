@@ -1,7 +1,7 @@
 #  Pyrogram - Telegram MTProto API Client Library for Python
 #  Copyright (C) 2017-present Dan <https://github.com/delivrance>
 #
-#  This file is part of Pyrogram.
+#  This file is part of of Pyrogram.
 #
 #  Pyrogram is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU Lesser General Public License as published
@@ -1615,7 +1615,7 @@ class Message(Object, Update):
                 If the message is a reply, ID of the original message.
 
             reply_markup (:obj:`~pyrogram.types.InlineKeyboardMarkup`, *optional*):
-                An object for an inline keyboard. If empty, one ‘Play game_title�? button will be shown automatically.
+                An object for an inline keyboard. If empty, one âPlay game_titleâ? button will be shown automatically.
                 If not empty, the first button must launch the game.
 
         Returns:
@@ -1809,7 +1809,7 @@ class Message(Object, Update):
             media (``list``):
                 A list containing either :obj:`~pyrogram.types.InputMediaPhoto` or
                 :obj:`~pyrogram.types.InputMediaVideo` objects
-                describing photos and videos to be sent, must include 2�?10 items.
+                describing photos and videos to be sent, must include 2â?10 items.
 
             quote (``bool``, *optional*):
                 If ``True``, the message will be sent as a reply to this message.
